@@ -98,7 +98,7 @@ export function PremiumFooter() {
           </div>
 
           <div className="text-xs text-background/50">
-            <span>© ۱۴۰۴ . تمامی حقوق برای تیم ووف محفوظ است</span>
+            <span>© ۱۴۰۴ . تمامی حقوق برای تیم ووف محفوظ است.</span>
           </div>
         </div>
       </div>
