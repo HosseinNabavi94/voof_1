@@ -62,7 +62,7 @@ export function Navigation() {
   const navLinks = [
     { href: "/", label: "خانه" },
     { href: "/shop", label: "فروشگاه" },
-    { href: "/heritage", label: "میراث" },
+    { href: "/heritage", label: "داستان ووف" },
   ];
 
   const navItemColor = isScrolled ? "text-foreground" : "text-white";
