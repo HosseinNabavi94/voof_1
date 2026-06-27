@@ -22,7 +22,7 @@ export function CollectionGrid() {
         >
           <h2 className="font-serif text-3xl lg:text-5xl mb-4">انتخاب محصول</h2>
           <p className="text-muted-foreground max-w-md mx-auto">
-            هر قطعه روایتگر داستانیست از ریشه‌هایمان!
+            هر قطعه روایتگر داستانیست از ریشه‌هایمان
           </p>
         </motion.div>
 
@@ -65,7 +65,7 @@ export function CollectionGrid() {
             href="/shop"
             className="inline-flex items-center text-sm border-b border-foreground pb-1 hover:border-transparent transition-colors duration-300"
           >
-            مشاهده کل مجموعه
+            مشاهده همه محصولات
           </Link>
         </motion.div>
       </div>
