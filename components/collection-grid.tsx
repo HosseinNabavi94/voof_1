@@ -20,9 +20,9 @@ export function CollectionGrid() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16 lg:mb-24"
         >
-          <h2 className="font-serif text-3xl lg:text-5xl mb-4">منتخب گزیده</h2>
+          <h2 className="font-serif text-3xl lg:text-5xl mb-4">انتخاب محصول</h2>
           <p className="text-muted-foreground max-w-md mx-auto">
-            هر قطعه روایتگر داستانی از صنعتگری دقیق است
+            هر قطعه روایتگر داستانیست از ریشه‌هایمان!
           </p>
         </motion.div>
 
