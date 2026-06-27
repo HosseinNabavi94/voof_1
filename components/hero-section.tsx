@@ -26,7 +26,7 @@ export function HeroSection() {
         {/* Background image */}
         <div className="absolute inset-0">
           <Image
-            src="/luxury-minimalist-fashion-model-in-elegant-dark-cl.jpg"
+            src="/voof-new-hero.webp"
             alt="مدل مد شیک در لباس تیره"
             fill
             priority
