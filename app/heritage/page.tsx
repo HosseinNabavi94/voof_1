@@ -56,19 +56,19 @@ const craftsmen = [
   {
     name: "حسین نبوی",
     role: "بنیانگذار",
-    years: "ساله ۳۳",
+    years: "۳۳ سال",
     image: "/Hossein1_lossy.webp",
   },
   {
     name: "فاطمه فهیمی",
     role: "مدیر فروش",
-    years: "ساله ۲۶",
+    years: "۲۶ سال",
     image: "/Fatemeh2.webp",
   },
   {
     name: "فاطمه نصری",
     role: "مدیر تولید",
-    years: "۳۵ساله",
+    years: "۳۵ سال",
     image: "/Fatemeh3.webp",
   },
 ];
