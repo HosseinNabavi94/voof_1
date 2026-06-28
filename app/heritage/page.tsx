@@ -300,19 +300,19 @@ export default function HeritagePage() {
             viewport={{ once: true }}
           >
             <span className="text-xs text-muted-foreground mb-4 block">
-              کاوش
+              همراهی
             </span>
             <h2 className="font-serif text-3xl lg:text-5xl mb-6">
-              مجموعه را کشف کنید
+              عضو خانواده‌ی ووف شوید
             </h2>
             <p className="text-muted-foreground text-lg mb-10 max-w-2xl mx-auto leading-relaxed">
-              اوج میراث ما را در هر قطعه‌ای که می‌آفرینیم تجربه کنید.
+              همراه ما باشید و وطن را در هر قطعه‌ای که می‌آفرینیم تجربه کنید.
             </p>
             <Link
               href="/"
               className="group inline-flex items-center gap-3 bg-foreground text-background px-8 py-4 text-sm hover:gap-5 transition-all duration-300"
             >
-              مشاهده مجموعه
+              مشاهده محصولات
               <ArrowLeft className="h-4 w-4 stroke-[1.5]" />
             </Link>
           </motion.div>
