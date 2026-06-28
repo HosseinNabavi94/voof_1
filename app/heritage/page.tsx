@@ -232,9 +232,9 @@ export default function HeritagePage() {
             className="text-center mb-16 lg:mb-24"
           >
             <span className="text-xs text-background/60 mb-4 block">
-              استادکاران
+              تیم ووف
             </span>
-            <h2 className="font-serif text-3xl lg:text-5xl">استادانِ هنر</h2>
+            <h2 className="font-serif text-3xl lg:text-5xl"> ووف را ساختیم تا شعلهٔ‌ی در حال خاموشی فرهنگمان را دوباره زنده کنیم </h2>
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-12">
