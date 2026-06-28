@@ -82,8 +82,8 @@ export default function HeritagePage() {
       <section className="relative h-[70vh] lg:h-[80vh] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0">
           <Image
-            src="/florence-italy-aerial-view-luxury-historic.jpg"
-            alt="فلورانس، ایتالیا"
+            src="/hero-veresk-voof.webp"
+            alt="ورسک، مازندران"
             fill
             priority
             sizes="100vw"
