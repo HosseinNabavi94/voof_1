@@ -115,7 +115,7 @@ export default function HeritagePage() {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="text-background/80 text-lg lg:text-xl max-w-2xl mx-auto leading-relaxed"
           >
-            تلفیق گذشته و حال در جست‌وجوی بازیابی هویتمان.
+         در جست‌وجوی ریشه‌ها
           </motion.p>
         </div>
       </section>
@@ -132,6 +132,7 @@ export default function HeritagePage() {
           >
 
 گاهی سقوط یک سرزمین، پیش از آن است که خاکش را از دست بدهد. گاهی سقوط وقتی رخ می‌دهد که وطن، واژه‌هایش را از یاد می‌برد؛ قصه‌هایش را فراموش می‌کند و صدای ریشه‌هایش در هیاهوی زمان، آرام‌آرام خاموش می‌شود. ووف از دل این باور متولد شد که هیچ ملتی بدون ریشه‌هایش آینده‌ای ماندگار نخواهد ساخت. تلاش خواهیم کرد تا آنچه در غبار فراموشی پنهان مانده است دوباره جان بگیرد؛ واژه‌هایی که روزی بر زبان پدربزرگ‌ها و مادربزرگ‌ها جاری بود، فرهنگی که در تار و پود زندگی این سرزمین نفس می‌کشید و هویتی که نسل‌ها آن را با عشق حفظ کردند. ووف پلی است میان گذشته و امروز؛ دعوتی برای نسلی که می‌خواهد رو به آینده گام بردارد، اما ریشه‌هایش را از یاد نبرد. و فراموش نکند که درختی که ریشه‌هایش را به خاطر نسپارد، در برابر هیچ طوفانی دوام نخواهد آورد.
+
 
           </motion.p>
         </div>
@@ -173,7 +174,7 @@ export default function HeritagePage() {
               {section.paragraphs.map((paragraph, pIndex) => (
                 <p
                   key={pIndex}
-                  className="text-muted-foreground leading-relaxed text-base lg:text-lg"
+                  className="text-muted-foreground leading-relaxed text-base lg:text-lg text-justify"
                 >
                   {paragraph}
                 </p>
