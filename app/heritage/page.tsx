@@ -7,57 +7,48 @@ import { PremiumFooter } from "@/components/premium-footer";
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
 
-const timeline = [
+const aboutSections = [
   {
-    year: "۱۸۴۷",
-    title: "آغاز",
-    description:
-      "جوزپه مزون نخستین آتلیه ما را در فلورانس بنا نهاد و برای اشراف ایتالیا کالاهای چرمی سفارشی می‌ساخت. نگاه او ساده بود: آفریدن قطعاتی که از زمان فراتر روند.",
-  },
-  {
-    year: "۱۸۹۲",
-    title: "انتصاب سلطنتی",
-    description:
-      "مزون به‌پاس صنعتگری استثنایی، نخستین نشان سلطنتی خود را دریافت کرد و سنتی از خدمت به مشتریان نکته‌سنج در سراسر اروپا را بنا گذاشت.",
-  },
-  {
-    year: "۱۹۳۵",
-    title: "کوک نشانه",
-    description:
-      "مارکو مزون، استادکار نسل سوم، تکنیک دست‌دوزی متمایز ما را به کمال رساند که امروز در سراسر جهان به‌عنوان نشانه اصالت قطعات مزون شناخته می‌شود.",
-  },
-  {
-    year: "۱۹۷۸",
-    title: "گسترش جهانی",
-    description:
-      "مزون در حالی که آتلیه فلورانس را به‌عنوان قلب تولید حفظ کرد، بوتیک‌هایی در پاریس، میلان و نیویورک گشود و برتری ایتالیایی را با جهان به اشتراک گذاشت.",
-  },
-  {
-    year: "۱۴۰۳",
-    title: "نگاه امروزی",
-    description:
-      "امروز نسل پنجم میراث ما را ادامه می‌دهد و قرن‌ها سنت را با طراحی امروزی درمی‌آمیزد تا قطعاتی برای دوست‌داران آگاه امروز بیافریند.",
-  },
-];
-
-const values = [
-  {
-    title: "برتری هنرِ دست",
-    description:
-      "هر قطعه توسط استادکارانی با دهه‌ها تجربه ساخته می‌شود تا کیفیتی بی‌نظیر و توجه به جزئیات تضمین شود.",
+    eyebrow: "روایت بیداری یک سرزمین",
+    heading: "ریشه‌هایی که خاموش نمی‌شوند",
+    paragraphs: [
+      "ووف فقط یک برند لباس نیست؛ روایتی‌ست از عشق ما به سرزمینی که در رگ‌های ما جریان دارد. روایتی از مردمانی که نمی‌خواهند صدای ریشه‌هایشان در هیاهوی جهان امروز گم شود. ما ووف را خلق کردیم تا یادآوری کنیم فرهنگ، زبان و طبیعت یک سرزمین، تنها بخشی از گذشته نیستند؛ آن‌ها بخشی از زندگی امروز و آینده‌ی ما هستند.",
+      "در روزگاری که بسیاری از زبان‌های بومی و محلی آرام‌آرام به حاشیه رانده می‌شوند، ما تصمیم گرفتیم زبان مازندرانی را نه فقط در کتاب‌ها و خاطره‌ها، بلکه در دل زندگی روزمره زنده نگه داریم. هر واژه‌ی مازنی که بر لباس‌های ووف نقش می‌بندد، حامل بخشی از هویت جمعی ماست؛ هویتی که نسل‌ها با آن خندیده‌اند، عاشق شده‌اند، کار کرده‌اند و زندگی ساخته‌اند. برای ما، زبان تنها مجموعه‌ای از کلمات نیست؛ حافظه‌ی یک ملت است. اگر واژه‌ها خاموش شوند، بخشی از روح یک سرزمین نیز خاموش خواهد شد.",
+      "به همین دلیل، هر لباس ووف فراتر از یک پوشاک است. هر طرح، هر نوشته و هر جزئیات آن تلاشی برای روایت داستانی‌ست که از دل کوهستان‌ها، شالیزارها، دریا و جنگل‌های مازندران برخاسته است. ما می‌خواهیم نسل امروز و فردا، زبان مادری و فرهنگ خود را نه به‌عنوان یادگاری از گذشته، بلکه به‌عنوان بخشی زنده و پویا از زندگی امروز تجربه کنند.",
+    ],
     image: "/artisan-hands-crafting-leather-luxury-goods.jpg",
+    imageAlt: "صنعتگری دست‌ساز ووف",
   },
   {
-    title: "لوکسِ پایدار",
-    description:
-      "ما تنها از مرغوب‌ترین مواد از تأمین‌کنندگان اخلاق‌مدار بهره می‌گیریم، با این باور که لوکس راستین باید نسبت به مردم و سیاره مسئول باشد.",
+    eyebrow: "مسئولیت ما",
+    heading: "حفاظت از جانِ وطن",
+    paragraphs: [
+      "اما عشق به وطن تنها در حفظ زبان خلاصه نمی‌شود. وطن ما درختانش را نیز دارد؛ جنگل‌های باشکوه هیرکانی که میلیون‌ها سال است بر این سرزمین سایه افکنده‌اند و بخشی از هویت طبیعی ما را شکل داده‌اند. جنگل‌هایی که هوایشان را نفس می‌کشیم، باران می‌آورند و ریشه‌های ما را در آغوش خود حفظ کرده‌اند.",
+      "ما باور داریم که هر کسب‌وکاری مسئولیتی فراتر از فروش محصول دارد. به همین دلیل بخشی از مأموریت ووف به حفاظت از طبیعت گره خورده است. به ازای هر ۱۰ لباس فروخته‌شده، یک نهال در جنگل‌های هیرکانی کاشته می‌شود؛ اقدامی کوچک اما معنادار برای بازگرداندن بخشی از آنچه از این سرزمین دریافت کرده‌ایم. وقتی لباسی از ووف انتخاب می‌کنی، تنها یک محصول نمی‌خری؛ تو در حفظ میراث طبیعی سرزمینی سهیم می‌شوی که ریشه‌های همه‌ی ما در خاک آن تنیده شده است.",
+    ],
     image: "/premium-leather-material-sustainable-luxury.jpg",
+    imageAlt: "طبیعت و پایداری ووف",
   },
   {
-    title: "طراحی بی‌زمان",
-    description:
-      "طراحی‌های ما به‌جای مدهای زودگذر، ظرافت ماندگار را برمی‌گزینند و قطعاتی می‌آفرینند که برای نسل‌ها گرامی داشته شوند.",
+    eyebrow: "اصالت و طراحی",
+    heading: "پلی میان گذشته و آینده",
+    paragraphs: [
+      "در کنار زبان و طبیعت، اصالت فرهنگی مازندران نیز قلب تپنده‌ی ووف است. ما به زیبایی فرهنگ بومی خود افتخار می‌کنیم؛ فرهنگی که قرن‌ها در موسیقی، پوشش، معماری، قصه‌ها و سبک زندگی مردم این دیار جریان داشته است. با این حال، باور داریم اصالت زمانی زنده می‌ماند که بتواند با امروز گفت‌وگو کند. به همین دلیل تلاش کرده‌ایم میان گذشته و آینده پلی بسازیم؛ پلی که یک سوی آن ریشه‌های عمیق فرهنگ مازندران و سوی دیگر آن طراحی مدرن و سبک زندگی امروزی قرار دارد.",
+      "طراحی‌های ووف از همین نگاه متولد می‌شوند. ما عناصر فرهنگی و هویتی مازندران را با زبانی مینیمال، مدرن و قابل‌پوشیدن بازآفرینی می‌کنیم تا هر لباس بتواند هم نشانی از ریشه‌ها باشد و هم بخشی از زندگی روزمره‌ی انسان امروز. برای ما، لباس تنها پوشش نیست؛ رسانه‌ای‌ست برای روایت داستان‌ها، انتقال احساسات و زنده نگه داشتن آنچه ارزش ماندن دارد.",
+    ],
     image: "/minimalist-luxury-handbag-timeless-design.jpg",
+    imageAlt: "طراحی مدرن ووف",
+  },
+  {
+    eyebrow: "دعوت ما",
+    heading: "برای بازگشت",
+    paragraphs: [
+      "ووف حاصل این باور است که فرهنگ باید دیده شود، شنیده شود و زندگی شود. ما می‌خواهیم مردم نه فقط درباره‌ی مازندران بخوانند، بلکه آن را بپوشند، لمس کنند و با خود همراه داشته باشند. می‌خواهیم واژه‌های مازنی دوباره بر زبان‌ها جاری شوند، جنگل‌های هیرکانی دوباره نفسی تازه بکشند و اصالت این سرزمین در قالبی نو، در کنار نسل امروز ادامه پیدا کند.",
+      "راهی که پیش رو داریم را تنها نمی‌توان پیمود. ووف از روز نخست با همراهی کسانی شکل گرفت که به ریشه‌های خود افتخار می‌کنند و باور دارند آینده بدون شناخت گذشته ساخته نمی‌شود. هر خرید، هر همراهی و هر حمایت، بخشی از این حرکت جمعی برای حفظ هویت، فرهنگ و طبیعت ماست.",
+      "ووف دعوتی‌ست برای بازگشت؛ بازگشت به زبان مادری، به ریشه‌های فراموش‌شده، به جنگل‌هایی که خانه‌ی ما هستند و به فرهنگی که هنوز در قلب این سرزمین می‌تپد. ما آمده‌ایم تا یادآوری کنیم که وطن فقط جایی روی نقشه یا حک شده در شناسنامه‌ی ما نیست؛ وطن در واژه‌ها، در درختان و در داستان‌هایی که نسل به نسل منتقل شده‌اند، زندگی می‌کند.",
+    ],
+    image: null,
+    imageAlt: "",
   },
 ];
 
@@ -147,108 +138,87 @@ export default function HeritagePage() {
         </div>
       </section>
 
-      {/* Timeline */}
-      <section className="py-20 lg:py-32 bg-muted">
-        <div className="max-w-6xl mx-auto px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-center mb-16 lg:mb-24"
-          >
-            <span className="text-xs text-muted-foreground mb-4 block">
-              سفر ما
-            </span>
-            <h2 className="font-serif text-3xl lg:text-5xl">میراثی از برتری</h2>
-          </motion.div>
+      {/* About Us */}
+      {aboutSections.map((section, index) => (
+        <section
+          key={section.heading}
+          className={`py-20 lg:py-32 px-6 lg:px-8 ${
+            index % 2 === 0 ? "bg-muted" : ""
+          }`}
+        >
+          <div className="max-w-7xl mx-auto">
+            {/* Section header */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+              className="text-center mb-12 lg:mb-16"
+            >
+              <span className="text-xs text-muted-foreground mb-4 block">
+                {section.eyebrow}
+              </span>
+              <h2 className="font-serif text-3xl lg:text-5xl">
+                {section.heading}
+              </h2>
+            </motion.div>
 
-          <div className="relative">
-            {/* Timeline line - hidden on mobile */}
-            <div className="hidden lg:block absolute left-1/2 top-0 bottom-0 w-px bg-border" />
-
-            {timeline.map((item, index) => (
-              <motion.div
-                key={item.year}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                className={`relative flex flex-col lg:flex-row items-start lg:items-center gap-6 lg:gap-12 mb-12 lg:mb-16 ${
-                  index % 2 === 0 ? "lg:flex-row" : "lg:flex-row-reverse"
-                }`}
-              >
-                {/* Content */}
-                <div
-                  className={`flex-1 ${index % 2 === 0 ? "lg:text-left" : "lg:text-right"}`}
+            {/* Body */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: 0.1 }}
+              className="max-w-3xl mx-auto space-y-6"
+            >
+              {section.paragraphs.map((paragraph, pIndex) => (
+                <p
+                  key={pIndex}
+                  className="text-muted-foreground leading-relaxed text-base lg:text-lg"
                 >
-                  <span className="font-serif text-3xl lg:text-4xl text-muted-foreground/50 block mb-2">
-                    {item.year}
-                  </span>
-                  <h3 className="font-serif text-xl lg:text-2xl mb-3">
-                    {item.title}
-                  </h3>
-                  <p className="text-muted-foreground leading-relaxed text-sm lg:text-base">
-                    {item.description}
-                  </p>
-                </div>
+                  {paragraph}
+                </p>
+              ))}
+            </motion.div>
 
-                {/* Dot - hidden on mobile */}
-                <div className="hidden lg:block relative z-10">
-                  <div className="w-4 h-4 bg-foreground" />
-                </div>
-
-                {/* Spacer for alternating layout */}
-                <div className="hidden lg:block flex-1" />
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Values Section */}
-      <section className="py-20 lg:py-32 px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-center mb-16 lg:mb-24"
-          >
-            <span className="text-xs text-muted-foreground mb-4 block">
-              فلسفه ما
-            </span>
-            <h2 className="font-serif text-3xl lg:text-5xl">اصول راهنما</h2>
-          </motion.div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-12">
-            {values.map((value, index) => (
+            {/* Image placeholder — reuse later */}
+            {section.image && (
               <motion.div
-                key={value.title}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="group"
+                transition={{ duration: 0.8, delay: 0.2 }}
+                className="max-w-5xl mx-auto mt-16 lg:mt-24"
               >
-                <div className="aspect-[5/6] overflow-hidden mb-6 relative">
+                <div className="relative aspect-[16/10] overflow-hidden group">
                   <Image
-                    src={value.image || "/placeholder.svg"}
-                    alt={value.title}
+                    src={section.image || "/placeholder.svg"}
+                    alt={section.imageAlt}
                     fill
-                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                    sizes="(max-width: 1024px) 100vw, 1024px"
                     loading="lazy"
                     className="object-cover transition-transform duration-700 group-hover:scale-105"
                   />
                 </div>
-                <h3 className="font-serif text-xl lg:text-2xl mb-3">
-                  {value.title}
-                </h3>
-                <p className="text-muted-foreground leading-relaxed text-sm lg:text-base">
-                  {value.description}
-                </p>
               </motion.div>
-            ))}
+            )}
           </div>
+        </section>
+      ))}
+
+      {/* Closing statement */}
+      <section className="py-20 lg:py-32 px-6 lg:px-8 bg-muted">
+        <div className="max-w-4xl mx-auto text-center">
+          <motion.p
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="font-serif text-2xl lg:text-4xl leading-relaxed text-balance"
+          >
+            ووف؛ تن‌پوشی که قلب وطن را دوباره به تپش می‌اندازد. برای شما، برای
+            ریشه‌هایمان و برای بازگشت شادی.
+          </motion.p>
         </div>
       </section>
 
