@@ -99,7 +99,7 @@ export default function HeritagePage() {
             transition={{ duration: 0.6 }}
             className="text-xs text-background/70 mb-6 block"
           >
-            از سال ۱۸۴۷
+            از سال ۱۴۰۵
           </motion.span>
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
@@ -107,7 +107,7 @@ export default function HeritagePage() {
             transition={{ duration: 0.8, delay: 0.1 }}
             className="font-serif text-5xl md:text-6xl lg:text-7xl text-background mb-6 leading-[1.2] text-balance"
           >
-            میراث ما
+            داستان ووف
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 30 }}
@@ -115,7 +115,7 @@ export default function HeritagePage() {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="text-background/80 text-lg lg:text-xl max-w-2xl mx-auto leading-relaxed"
           >
-            پنج نسل صنعتگری ایتالیایی، وقف‌شده به جست‌وجوی ظرافت بی‌زمان.
+            تلفیق گذشته و حال در جست‌وجوی بازیابی هویتمان.
           </motion.p>
         </div>
       </section>
@@ -130,10 +130,9 @@ export default function HeritagePage() {
             transition={{ duration: 0.8 }}
             className="text-lg lg:text-xl text-muted-foreground leading-relaxed"
           >
-            در قلب فلورانس، جایی که رنسانس زیبایی و صنعتگری را بازتعریف کرد،
-            داستان ما آغاز شد. آنچه به‌عنوان کارگاهی کوچک شروع شد، به نمادی از
-            برتری ایتالیایی بدل شده است، اما اصول بنیادین ما بی‌تغییر مانده‌اند:
-            مواد استثنایی، تکنیک استادانه و تعهدی تزلزل‌ناپذیر به کمال.
+
+گاهی سقوط یک سرزمین، پیش از آن است که خاکش را از دست بدهد. گاهی سقوط وقتی رخ می‌دهد که وطن، واژه‌هایش را از یاد می‌برد؛ قصه‌هایش را فراموش می‌کند و صدای ریشه‌هایش در هیاهوی زمان، آرام‌آرام خاموش می‌شود. ووف از دل این باور متولد شد که هیچ ملتی بدون ریشه‌هایش آینده‌ای ماندگار نخواهد ساخت. تلاش خواهیم کرد تا آنچه در غبار فراموشی پنهان مانده است دوباره جان بگیرد؛ واژه‌هایی که روزی بر زبان پدربزرگ‌ها و مادربزرگ‌ها جاری بود، فرهنگی که در تار و پود زندگی این سرزمین نفس می‌کشید و هویتی که نسل‌ها آن را با عشق حفظ کردند. ووف پلی است میان گذشته و امروز؛ دعوتی برای نسلی که می‌خواهد رو به آینده گام بردارد، اما ریشه‌هایش را از یاد نبرد. و فراموش نکند که درختی که ریشه‌هایش را به خاطر نسپارد، در برابر هیچ طوفانی دوام نخواهد آورد.
+
           </motion.p>
         </div>
       </section>
