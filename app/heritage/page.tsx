@@ -306,7 +306,7 @@ export default function HeritagePage() {
               عضو خانواده‌ی ووف شوید
             </h2>
             <p className="text-muted-foreground text-lg mb-10 max-w-2xl mx-auto leading-relaxed">
-              همراه ما باشید و وطن را در هر قطعه‌ای که می‌آفرینیم تجربه کنید.
+              بازیابی هویت اصیلتان را در هر قطعه‌ای که می‌آفرینیم تجربه کنید.
             </p>
             <Link
               href="/"
