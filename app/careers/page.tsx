@@ -9,9 +9,6 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
 import { Check } from "lucide-react";
-import DatePicker, { DateObject } from "react-multi-date-picker";
-import persian from "react-date-object/calendars/persian";
-import persian_fa from "react-date-object/locales/persian_fa";
 
 interface ApplicationForm {
   firstName: string;
@@ -43,7 +40,6 @@ const initialForm: ApplicationForm = {
 
 export default function CareersPage() {
   const [form, setForm] = useState<ApplicationForm>(initialForm);
-  const [birthDateValue, setBirthDateValue] = useState<DateObject | null>(null);
   const [submitted, setSubmitted] = useState(false);
 
   const handleChange =
@@ -169,33 +165,12 @@ export default function CareersPage() {
                       <Label htmlFor="birthDate" className="text-xs">
                         تاریخ تولد
                       </Label>
-                      <DatePicker
-                        value={birthDateValue}
-                        onChange={(date) => {
-                          const selected = date as DateObject | null;
-                          setBirthDateValue(selected);
-                          setForm((prev) => ({
-                            ...prev,
-                            birthDate: selected
-                              ? selected.toDate().toISOString().split("T")[0]
-                              : "",
-                          }));
-                        }}
-                        calendar={persian}
-                        locale={persian_fa}
-                        format="YYYY/MM/DD"
-                        calendarPosition="bottom-right"
-                        render={(value: string, openCalendar: () => void) => (
-                          <Input
-                            id="birthDate"
-                            readOnly
-                            value={value}
-                            onClick={openCalendar}
-                            onFocus={openCalendar}
-                            placeholder="انتخاب تاریخ"
-                            className="mt-1.5 border-border/50 focus:border-foreground cursor-pointer"
-                          />
-                        )}
+                      <Input
+                        id="birthDate"
+                        type="date"
+                        value={form.birthDate}
+                        onChange={handleChange("birthDate")}
+                        className="mt-1.5 border-border/50 focus:border-foreground"
                       />
                     </div>
                     <div>
