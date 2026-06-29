@@ -115,11 +115,18 @@ export function Navigation() {
 
             {/* Logo */}
             <Link
-              href="/"
-              className="absolute left-1/2 -translate-x-1/2 font-serif text-xl lg:text-2xl text-foreground"
-            >
-              ووف
-            </Link>
+  href="/"
+  className="absolute left-1/2 -translate-x-1/2 flex items-center justify-center"
+>
+  <Image
+    src="/Voof_logo.svg"
+    alt="Voof"
+    width={140}
+    height={40}
+    priority
+    className="h-6 lg:h-8 w-auto object-contain"
+  />
+</Link>
 
             {/* Right icons */}
             <div className="flex items-center gap-2 lg:gap-4">
