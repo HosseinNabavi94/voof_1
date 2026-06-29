@@ -79,7 +79,7 @@ export function FaqSection() {
                 className="flex items-center justify-between w-full text-right px-6 py-5 gap-4"
                 aria-expanded={openIndex === index}
               >
-                <span className="text-sm lg:text-base">{faq.question}</span>
+                <span className="text-sm lg:text-base text-[#4e0000]">{faq.question}</span>
                 {openIndex === index ? (
                   <Minus className="w-4 h-4 flex-shrink-0" strokeWidth={1} />
                 ) : (
