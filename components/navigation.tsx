@@ -116,7 +116,7 @@ export function Navigation() {
             {/* Logo */}
             <Link
               href="/"
-              className="absolute left-1/2 -translate-x-1/2 font-serif text-xl lg:text-2xl text-foreground"
+              className="absolute left-1/2 -translate-x-1/2 font-serif text-xl lg:text-2xl text-[#4e0000]"
             >
               ووف
             </Link>
