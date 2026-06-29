@@ -25,7 +25,7 @@ export default function ShopPage() {
         <div className="absolute inset-0">
           <Image
             src="/shop-hero-luxury-fashion-collection.jpg"
-            alt="مجموعه فروشگاه"
+            alt="مجموعه فروشگاه پوشاک ووف"
             fill
             sizes="100vw"
             className="object-cover"
