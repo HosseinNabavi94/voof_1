@@ -283,8 +283,16 @@ export default function ContactPage() {
             <div className="border-t border-border/60">
               {channels.map((channel) => {
                 const Icon = channel.icon;
-                const content = (
-                  <>
+                return (
+                  
+                    key={channel.label}
+                    href={channel.href ?? undefined}
+                    target={channel.external ? "_blank" : undefined}
+                    rel={channel.external ? "noopener noreferrer" : undefined}
+                    className={`group flex items-center gap-4 py-4 border-b border-border/60 transition-colors duration-300 ${
+                      channel.href ? "hover:text-[#4e0000]" : "cursor-default"
+                    }`}
+                  >
                     <span className="w-10 h-10 flex items-center justify-center border border-border/60 transition-colors duration-300 group-hover:border-[#4e0000]">
                       <Icon className="w-4 h-4" strokeWidth={1.5} />
                     </span>
@@ -297,26 +305,7 @@ export default function ContactPage() {
                         {channel.value}
                       </span>
                     </span>
-                  </>
-                );
-
-                return channel.href ? (
-                  
-                    key={channel.label}
-                    href={channel.href}
-                    target={channel.external ? "_blank" : undefined}
-                    rel={channel.external ? "noopener noreferrer" : undefined}
-                    className="group flex items-center gap-4 py-4 border-b border-border/60 transition-colors duration-300 hover:text-[#4e0000]"
-                  >
-                    {content}
                   </a>
-                ) : (
-                  <div
-                    key={channel.label}
-                    className="group flex items-center gap-4 py-4 border-b border-border/60"
-                  >
-                    {content}
-                  </div>
                 );
               })}
             </div>
