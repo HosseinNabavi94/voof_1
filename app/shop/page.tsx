@@ -40,10 +40,10 @@ export default function ShopPage() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
         >
-          <h1 className="font-serif text-5xl md:text-7xl mb-6">مجموعه</h1>
+          <h1 className="font-serif text-5xl md:text-7xl mb-6">فروشگاه</h1>
           <p className="text-lg md:text-xl text-background/80 max-w-xl mx-auto">
             قطعاتی بی‌زمان که با نیت ساخته شده‌اند. هر قطعه نمایانگر تعهد ما به
-            کیفیت استثنایی است.
+            هویتمان است.
           </p>
         </motion.div>
       </section>
@@ -134,17 +134,16 @@ export default function ShopPage() {
       <section className="border-t border-muted py-16 md:py-24">
         <div className="max-w-4xl mx-auto px-6 text-center">
           <h2 className="font-serif text-3xl md:text-4xl mb-6">
-            ساخته‌شده با هدف
+            برای بازگشت شادی
           </h2>
           <p className="text-muted-foreground mb-8 max-w-xl mx-auto">
-            هر قطعه در مجموعه ما میراثی از صنعتگری ایتالیایی را که بیش از ۱۷۵
-            سال قدمت دارد به‌پیش می‌برد.
+            هر قطعه در مجموعه ما داستانی از گذشته را به دوش می‌کشد.
           </p>
           <Link
             href="/heritage"
             className="inline-flex items-center gap-2 text-sm border-b border-foreground pb-1 hover:gap-4 transition-all duration-300"
           >
-            کشف میراث ما
+            داستان ووف
             <ArrowLeft className="w-4 h-4" />
           </Link>
         </div>
