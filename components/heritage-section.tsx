@@ -21,8 +21,8 @@ export function HeritageSection() {
       {/* Parallax background - converted to Next.js Image with lazy loading */}
       <motion.div style={{ y }} className="absolute inset-0 -top-20 -bottom-20">
         <Image
-          src="/italian-atelier-workshop-artisan-crafting-luxury-l.jpg"
-          alt="Heritage craftsmanship in Italian atelier"
+          src="/voof_heritage.webp"
+          alt="Heritage Voof"
           fill
           sizes="100vw"
           className="object-cover"
