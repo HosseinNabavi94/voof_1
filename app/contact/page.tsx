@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import Image from "next/image";
 import { motion } from "framer-motion";
 import { Navigation } from "@/components/navigation";
 import { PremiumFooter } from "@/components/premium-footer";
@@ -111,21 +110,6 @@ export default function ContactPage() {
       {/* Header / Intro */}
       <section className="py-20 lg:py-32 px-6 lg:px-8">
         <div className="max-w-3xl mx-auto text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="mb-8 flex justify-center"
-          >
-            <Image
-              src="/Voof-logo.svg"
-              alt="ووف"
-              width={120}
-              height={48}
-              priority
-              className="h-12 w-auto"
-            />
-          </motion.div>
           <motion.span
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
