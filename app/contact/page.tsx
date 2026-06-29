@@ -268,7 +268,7 @@ export default function ContactPage() {
               {channels.map((channel) => {
                 const Icon = channel.icon;
                 return (
-                  
+                  <a
                     key={channel.label}
                     href={channel.href ?? undefined}
                     target={channel.external ? "_blank" : undefined}
