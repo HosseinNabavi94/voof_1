@@ -95,7 +95,7 @@ export default function CarePage() {
         <div className="absolute inset-0">
           {/* Placeholder image — replace later with a Hyrcanian forest shot. */}
           <Image
-            src="/florence-italy-aerial-view-luxury-historic.jpg"
+            src="/caspianـhyrcanianـforest.webp"
             alt="جنگل‌های هیرکانی"
             fill
             priority
@@ -184,8 +184,8 @@ export default function CarePage() {
           >
             <div className="relative aspect-[16/10] overflow-hidden group">
               <Image
-                src="/italian-atelier-workshop-artisan-crafting-luxury-l.jpg"
-                alt="جنگل‌های هیرکانی"
+                src="/koodir_mazandaran_iran.webp"
+                alt="ووف جنگل‌های هیرکانی"
                 fill
                 sizes="(max-width: 1024px) 100vw, 1024px"
                 loading="lazy"
@@ -226,7 +226,7 @@ export default function CarePage() {
           >
             <div className="relative aspect-[16/10] overflow-hidden group">
               <Image
-                src="/premium-leather-material-sustainable-luxury.jpg"
+                src="/BuxusـhyrcanaـPojark.webp"
                 alt="طبیعت هیرکانی"
                 fill
                 sizes="(max-width: 1024px) 100vw, 1024px"
