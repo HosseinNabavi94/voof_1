@@ -112,7 +112,7 @@ export default function CarePage() {
             transition={{ duration: 0.6 }}
             className="text-xs text-background/70 mb-6 block"
           >
-            مراقبت، فراتر از یک لباس
+            مراقبت از وطن، فراتر از یک خرید
           </motion.span>
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
@@ -120,16 +120,17 @@ export default function CarePage() {
             transition={{ duration: 0.8, delay: 0.1 }}
             className="font-serif text-5xl md:text-6xl lg:text-7xl text-background mb-6 leading-[1.2] text-balance"
           >
-            دستورالعمل‌های نگهداری
+            برای بازگشت نفس‌های هیرکان
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
             className="text-background/80 text-lg lg:text-xl max-w-2xl mx-auto leading-relaxed"
-          >
-            لوکس راستین تنها داشتنِ زیبایی نیست؛ مراقبت از آن است. هر قطعه‌ی ووف،
-            هم حاصل دستان صنعتگران است و هم بخشی از طبیعتی که به ما بخشیده شده.
+          >### وقتی جنگل دوباره نفس می‌کشد
+
+جنگل‌های هیرکانی فقط درختان کهنسال نیستند؛ خاطره‌ی زنده‌ی این سرزمین‌اند. هر شاخه، روایت هزاران سال ایستادگی است و هر برگ، نفسی که هنوز زندگی را در رگ‌های وطن جاری نگه داشته است. ما باور داریم اگر بتوانیم حتی یک نهال به این میراث کهن بازگردانیم، امیدی را به خاک سپرده‌ایم که روزی سایه‌اش بر شانه‌های فرزندان این سرزمین خواهد افتاد. ووف برای همین کنار طبیعت ایستاده است؛ تا هیرکان دوباره نفس بکشد
+.
           </motion.p>
         </div>
       </section>
