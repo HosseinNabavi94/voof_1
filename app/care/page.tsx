@@ -8,9 +8,31 @@ import { PremiumFooter } from "@/components/premium-footer";
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
-import { Check, X, TreePine, ArrowLeft } from "lucide-react";
+import { X, TreePine, ArrowLeft, Plus } from "lucide-react";
 
 const ACCENT = "#4e0000";
+
+// Fixed contribution per planted tree (تومان). Single source of truth.
+const CONTRIBUTION_PER_TREE = 850000;
+
+// Placeholder payment destination. See handleCheckout() for the integration note.
+const PAYMENT_PLACEHOLDER_URL = "/payment-placeholder";
+
+const toFa = (n: number) => n.toLocaleString("fa-IR");
+
+interface Recipient {
+  firstName: string;
+  lastName: string;
+  phone: string;
+  treeName: string;
+}
+
+const emptyRecipient = (): Recipient => ({
+  firstName: "",
+  lastName: "",
+  phone: "",
+  treeName: "",
+});
 
 /**
  * MOCK DATA — temporary.
@@ -30,25 +52,36 @@ const treePins = [
 export default function CarePage() {
   const [activePin, setActivePin] = useState<number | null>(null);
   const [plantOpen, setPlantOpen] = useState(false);
-  const [form, setForm] = useState({ fullName: "", email: "", phone: "" });
-  const [submitted, setSubmitted] = useState(false);
+  const [recipients, setRecipients] = useState<Recipient[]>([emptyRecipient()]);
 
-  const handleChange =
-    (field: "fullName" | "email" | "phone") =>
+  const updateRecipient =
+    (index: number, field: keyof Recipient) =>
     (e: React.ChangeEvent<HTMLInputElement>) => {
-      setForm((prev) => ({ ...prev, [field]: e.target.value }));
+      setRecipients((prev) =>
+        prev.map((r, i) =>
+          i === index ? { ...r, [field]: e.target.value } : r,
+        ),
+      );
     };
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    // TODO: Connect to backend here — persist the request, plant a tree in the
-    // user's name, add it to the interactive map, and issue a unique discount
-    // code. For now we only surface a client-side success state.
-    setSubmitted(true);
-  };
+  const addRecipient = () =>
+    setRecipients((prev) => [...prev, emptyRecipient()]);
 
-  const closePlant = () => {
-    setPlantOpen(false);
+  const removeRecipient = (index: number) =>
+    setRecipients((prev) => prev.filter((_, i) => i !== index));
+
+  const total = recipients.length * CONTRIBUTION_PER_TREE;
+
+  const isValid = recipients.every(
+    (r) => r.firstName && r.lastName && r.phone && r.treeName,
+  );
+
+  const handleCheckout = () => {
+    // TODO: Integrate the real payment gateway here (e.g. Zarinpal).
+    // Build the order from `recipients` and `total`, create a payment session
+    // on the server, then redirect the user to the gateway. For now we simply
+    // navigate to a clearly-marked placeholder URL.
+    window.location.href = PAYMENT_PLACEHOLDER_URL;
   };
 
   const selectedPin = treePins.find((p) => p.id === activePin) || null;
@@ -57,15 +90,27 @@ export default function CarePage() {
     <main className="min-h-screen bg-background">
       <Navigation />
 
-      {/* 1 — Hero */}
-      <section className="py-20 lg:py-32 px-6 lg:px-8">
-        <div className="max-w-3xl mx-auto text-center">
+      {/* 1 — Hero (matches Heritage page) */}
+      <section className="relative h-[70vh] lg:h-[80vh] flex items-center justify-center overflow-hidden">
+        <div className="absolute inset-0">
+          {/* Placeholder image — replace later with a Hyrcanian forest shot. */}
+          <Image
+            src="/florence-italy-aerial-view-luxury-historic.jpg"
+            alt="جنگل‌های هیرکانی"
+            fill
+            priority
+            sizes="100vw"
+            className="object-cover"
+          />
+          <div className="absolute inset-0 bg-foreground/50" />
+        </div>
+
+        <div className="relative z-10 text-center px-6">
           <motion.span
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="text-xs mb-4 block"
-            style={{ color: ACCENT }}
+            className="text-xs text-background/70 mb-6 block"
           >
             مراقبت، فراتر از یک لباس
           </motion.span>
@@ -73,7 +118,7 @@ export default function CarePage() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.1 }}
-            className="font-serif text-4xl md:text-5xl lg:text-6xl mb-8 leading-[1.2] text-balance"
+            className="font-serif text-5xl md:text-6xl lg:text-7xl text-background mb-6 leading-[1.2] text-balance"
           >
             دستورالعمل‌های نگهداری
           </motion.h1>
@@ -81,11 +126,10 @@ export default function CarePage() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-lg lg:text-xl text-muted-foreground leading-relaxed"
+            className="text-background/80 text-lg lg:text-xl max-w-2xl mx-auto leading-relaxed"
           >
-            لوکس راستین تنها داشتنِ زیبایی نیست؛ مراقبت از آن است. ما باور داریم
-            هر قطعه‌ی ووف، هم حاصل دستان صنعتگران است و هم بخشی از طبیعتی که به ما
-            بخشیده شده. نگه‌داشتن این هر دو — هنر و زمین — مسئولیت مشترک ماست.
+            لوکس راستین تنها داشتنِ زیبایی نیست؛ مراقبت از آن است. هر قطعه‌ی ووف،
+            هم حاصل دستان صنعتگران است و هم بخشی از طبیعتی که به ما بخشیده شده.
           </motion.p>
         </div>
       </section>
@@ -386,7 +430,7 @@ export default function CarePage() {
         </div>
       </section>
 
-      {/* 6 — Plant My Tree */}
+      {/* 6 — Plant My Tree (premium donation experience) */}
       <section className="pb-24 lg:pb-32 px-6 lg:px-8">
         <div className="max-w-2xl mx-auto">
           <motion.div
@@ -394,38 +438,40 @@ export default function CarePage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="border p-10 lg:p-14 text-center"
+            className="border p-10 lg:p-14"
             style={{ borderColor: ACCENT }}
           >
-            <span
-              className="mx-auto mb-6 flex w-12 h-12 items-center justify-center border"
-              style={{ borderColor: ACCENT }}
-            >
-              <TreePine
-                className="w-5 h-5"
-                strokeWidth={1.5}
-                style={{ color: ACCENT }}
-              />
-            </span>
-            <h2 className="font-serif text-3xl lg:text-4xl mb-4">
-              نهال خودت را بکار
-            </h2>
-            <p className="text-muted-foreground leading-relaxed mb-8 max-w-md mx-auto">
-              به نام تو نهالی در جنگل‌های هیرکانی کاشته می‌شود و جای آن روی
-              نقشه‌ی مشارکت می‌نشیند. بیا بخشی از این جنگل زنده باشی.
-            </p>
-
-            {!plantOpen && !submitted && (
-              <button
-                type="button"
-                onClick={() => setPlantOpen(true)}
-                className="group inline-flex items-center justify-center gap-3 px-8 py-4 text-sm text-white transition-all duration-300"
-                style={{ backgroundColor: ACCENT }}
+            <div className="text-center">
+              <span
+                className="mx-auto mb-6 flex w-12 h-12 items-center justify-center border"
+                style={{ borderColor: ACCENT }}
               >
-                کاشت نهال من
-                <ArrowLeft className="h-4 w-4 transition-transform group-hover:-translate-x-1" />
-              </button>
-            )}
+                <TreePine
+                  className="w-5 h-5"
+                  strokeWidth={1.5}
+                  style={{ color: ACCENT }}
+                />
+              </span>
+              <h2 className="font-serif text-3xl lg:text-4xl mb-4">
+                نهال خودت را بکار
+              </h2>
+              <p className="text-muted-foreground leading-relaxed mb-8 max-w-md mx-auto">
+                به نام تو — یا هر کسی که دوستش داری — نهالی در جنگل‌های هیرکانی
+                کاشته می‌شود و جای آن روی نقشه‌ی مشارکت می‌نشیند.
+              </p>
+
+              {!plantOpen && (
+                <button
+                  type="button"
+                  onClick={() => setPlantOpen(true)}
+                  className="group inline-flex items-center justify-center gap-3 px-8 py-4 text-sm text-white transition-all duration-300"
+                  style={{ backgroundColor: ACCENT }}
+                >
+                  کاشت نهال من
+                  <ArrowLeft className="h-4 w-4 transition-transform group-hover:-translate-x-1" />
+                </button>
+              )}
+            </div>
 
             <AnimatePresence initial={false}>
               {plantOpen && (
@@ -436,101 +482,132 @@ export default function CarePage() {
                   transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
                   className="overflow-hidden"
                 >
-                  {submitted ? (
-                    <div className="pt-2 text-center">
-                      <div
-                        className="w-12 h-12 mx-auto mb-6 border flex items-center justify-center"
-                        style={{ borderColor: ACCENT }}
-                      >
-                        <Check
-                          className="w-5 h-5"
-                          strokeWidth={1.5}
-                          style={{ color: ACCENT }}
-                        />
+                  <div className="pt-8 text-right space-y-6">
+                    {/* One block per recipient — add or remove freely. */}
+                    {recipients.map((recipient, index) => (
+                      <div key={index} className="border border-border p-5">
+                        <div className="flex items-center justify-between mb-4">
+                          <h3 className="text-sm text-muted-foreground">
+                            نهال {toFa(index + 1)}
+                          </h3>
+                          {recipients.length > 1 && (
+                            <button
+                              type="button"
+                              onClick={() => removeRecipient(index)}
+                              aria-label="حذف"
+                              className="text-muted-foreground hover:text-foreground transition-colors"
+                            >
+                              <X className="w-4 h-4" strokeWidth={1.5} />
+                            </button>
+                          )}
+                        </div>
+
+                        <div className="space-y-4">
+                          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div>
+                              <Label
+                                htmlFor={`firstName-${index}`}
+                                className="text-xs"
+                              >
+                                نام
+                              </Label>
+                              <Input
+                                id={`firstName-${index}`}
+                                value={recipient.firstName}
+                                onChange={updateRecipient(index, "firstName")}
+                                className="mt-1.5 border-border/50 focus:border-foreground"
+                              />
+                            </div>
+                            <div>
+                              <Label
+                                htmlFor={`lastName-${index}`}
+                                className="text-xs"
+                              >
+                                نام خانوادگی
+                              </Label>
+                              <Input
+                                id={`lastName-${index}`}
+                                value={recipient.lastName}
+                                onChange={updateRecipient(index, "lastName")}
+                                className="mt-1.5 border-border/50 focus:border-foreground"
+                              />
+                            </div>
+                          </div>
+                          <div>
+                            <Label
+                              htmlFor={`phone-${index}`}
+                              className="text-xs"
+                            >
+                              شماره تماس
+                            </Label>
+                            <Input
+                              id={`phone-${index}`}
+                              type="tel"
+                              value={recipient.phone}
+                              onChange={updateRecipient(index, "phone")}
+                              className="mt-1.5 border-border/50 focus:border-foreground"
+                              placeholder="۰۹۱۲۳۴۵۶۷۸۹"
+                            />
+                          </div>
+                          <div>
+                            <Label
+                              htmlFor={`treeName-${index}`}
+                              className="text-xs"
+                            >
+                              نامی که روی نهال ثبت شود
+                            </Label>
+                            <Input
+                              id={`treeName-${index}`}
+                              value={recipient.treeName}
+                              onChange={updateRecipient(index, "treeName")}
+                              className="mt-1.5 border-border/50 focus:border-foreground"
+                              placeholder="نامی که می‌خواهی روی نهال بماند"
+                            />
+                          </div>
+                        </div>
                       </div>
-                      <h3 className="font-serif text-xl lg:text-2xl mb-3">
-                        نهال تو ثبت شد
-                      </h3>
-                      <p className="text-muted-foreground leading-relaxed">
-                        به‌زودی نهالی به نام تو کاشته می‌شود و روی نقشه‌ی مشارکت
-                        نمایان خواهد شد. کد تخفیف اختصاصی به‌عنوان سپاس، پس از
-                        ثبت نهایی برایت ارسال می‌شود.
+                    ))}
+
+                    <button
+                      type="button"
+                      onClick={addRecipient}
+                      className="w-full flex items-center justify-center gap-2 py-3 text-sm border border-dashed border-border text-muted-foreground hover:text-foreground hover:border-foreground transition-colors"
+                    >
+                      <Plus className="w-4 h-4" strokeWidth={1.5} />
+                      افزودن شخص دیگر
+                    </button>
+
+                    {/* Contribution info card */}
+                    <div className="bg-muted p-6 leading-relaxed">
+                      <p className="text-sm text-muted-foreground text-justify">
+                        مبلغ مشارکت برای هر نهال، هزینه‌ی تهیه‌ی نهال، کاشت،
+                        نگهداری و مراقبت از رشد نخستین شمشاد خزری — درختی در خطر
+                        انقراض — را پوشش می‌دهد. هر نهالی که می‌کاری، گامی‌ست برای
+                        زنده نگه‌داشتن جنگل‌های هیرکانی؛ میراثی که می‌خواهیم
+                        سبزتر از امروز به نسل‌های آینده بسپاریم.
                       </p>
                     </div>
-                  ) : (
-                    <form
-                      onSubmit={handleSubmit}
-                      className="text-right space-y-4 pt-2"
+
+                    {/* Auto-updating total */}
+                    <div className="flex items-center justify-between border-t border-border pt-5">
+                      <span className="text-sm text-muted-foreground">
+                        مبلغ مشارکت ({toFa(recipients.length)} نهال)
+                      </span>
+                      <span className="font-serif text-xl">
+                        {toFa(total)} تومان
+                      </span>
+                    </div>
+
+                    <Button
+                      type="button"
+                      onClick={handleCheckout}
+                      disabled={!isValid}
+                      className="w-full py-6 text-sm text-white hover:opacity-90"
+                      style={{ backgroundColor: ACCENT }}
                     >
-                      <div className="flex items-center justify-between">
-                        <h3 className="text-sm text-muted-foreground">
-                          اطلاعات تو
-                        </h3>
-                        <button
-                          type="button"
-                          onClick={closePlant}
-                          aria-label="بستن"
-                          className="text-muted-foreground hover:text-foreground transition-colors"
-                        >
-                          <X className="w-4 h-4" strokeWidth={1.5} />
-                        </button>
-                      </div>
-                      <div>
-                        <Label htmlFor="fullName" className="text-xs">
-                          نام و نام خانوادگی
-                        </Label>
-                        <Input
-                          id="fullName"
-                          required
-                          value={form.fullName}
-                          onChange={handleChange("fullName")}
-                          className="mt-1.5 border-border/50 focus:border-foreground"
-                        />
-                      </div>
-                      <div>
-                        <Label htmlFor="email" className="text-xs">
-                          ایمیل
-                        </Label>
-                        <Input
-                          id="email"
-                          type="email"
-                          required
-                          value={form.email}
-                          onChange={handleChange("email")}
-                          className="mt-1.5 border-border/50 focus:border-foreground"
-                          placeholder="your@email.com"
-                        />
-                      </div>
-                      <div>
-                        <Label htmlFor="phone" className="text-xs">
-                          شماره تماس
-                        </Label>
-                        <Input
-                          id="phone"
-                          type="tel"
-                          required
-                          value={form.phone}
-                          onChange={handleChange("phone")}
-                          className="mt-1.5 border-border/50 focus:border-foreground"
-                          placeholder="۰۹۱۲۳۴۵۶۷۸۹"
-                        />
-                      </div>
-
-                      <p className="text-xs text-muted-foreground leading-relaxed pt-2">
-                        با ثبت این فرم، نهالی به نام تو در جنگل‌های هیرکانی کاشته
-                        می‌شود، جای آن روی نقشه‌ی مشارکت نمایان خواهد شد و یک کد
-                        تخفیف اختصاصی به‌عنوان سپاس برایت ارسال می‌گردد.
-                      </p>
-
-                      <Button
-                        type="submit"
-                        className="w-full py-6 text-sm text-white hover:opacity-90"
-                        style={{ backgroundColor: ACCENT }}
-                      >
-                        ثبت درخواست کاشت نهال
-                      </Button>
-                    </form>
-                  )}
+                      ادامه و پرداخت
+                    </Button>
+                  </div>
                 </motion.div>
               )}
             </AnimatePresence>
