@@ -21,8 +21,8 @@ export function HeritageSection() {
       {/* Parallax background - converted to Next.js Image with lazy loading */}
       <motion.div style={{ y }} className="absolute inset-0 -top-20 -bottom-20">
         <Image
-          src="/italian-atelier-workshop-artisan-crafting-luxury-l.jpg"
-          alt="Heritage craftsmanship in Italian atelier"
+          src="/voof_heritage.webp"
+          alt="Heritage Voof"
           fill
           sizes="100vw"
           className="object-cover"
@@ -41,17 +41,15 @@ export function HeritageSection() {
             transition={{ duration: 0.8 }}
           >
             <span className="text-xs text-background/70 mb-6 block">
-              میراث ما
+              چرا ووف؟
             </span>
             <h2 className="font-serif text-4xl lg:text-6xl text-background mb-8 leading-[1.15] text-balance">
-              با نیت ساخته‌شده،
+              روایتی از گذشته،
               <br />
-              ساختِ ایتالیا
+              در قامت امروز
             </h2>
             <p className="text-background/80 text-lg lg:text-xl leading-relaxed max-w-2xl mx-auto mb-12">
-              برای بیش از پنج نسل، استادکاران ما هنر لوکس آرام را به کمال
-              رسانده‌اند. هر قطعه با دقت در آتلیه فلورانس ما ساخته می‌شود؛ جایی
-              که سنت با نگاه امروزی پیوند می‌خورد.
+              ووف، صدای ریشه‌هایی‌ست که خاموش نمی‌شوند؛ جایی که زبان مادریمان در تار و پود هر لباس زنده می‌ماند و هویت دیروز ما، در زندگی امروزمان نفس می‌کشد.
             </p>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-10 lg:gap-16">
@@ -63,11 +61,11 @@ export function HeritageSection() {
                 className="max-w-xs mx-auto"
               >
                 <h3 className="font-serif text-xl lg:text-2xl text-background mb-3">
-                  صنعتگری اصیل
+                  اصالت در دل طراحی مدرن
                 </h3>
                 <p className="text-sm text-background/70 leading-relaxed">
-                  هر قطعه با دستان استادکارانی شکل می‌گیرد که سال‌ها مهارت خود
-                  را صیقل داده‌اند. جزئیات، همان جایی است که تفاوت دیده می‌شود.
+                  طرح‌های ووف، پیوند زیبایی مدرن با عمق و اصالت فرهنگ مازندران‌ند. 
+هر لباس یک داستان است؛ داستانی که از دریا تا جنگل همراهت می‌آید و در زندگی امروزی تو ادامه پیدا می‌کند.
                 </p>
               </motion.div>
               <motion.div
@@ -78,11 +76,12 @@ export function HeritageSection() {
                 className="max-w-xs mx-auto"
               >
                 <h3 className="font-serif text-xl lg:text-2xl text-background mb-3">
-                  کیفیت بی‌زمان
+                  زبان مادری، میراث ما
                 </h3>
                 <p className="text-sm text-background/70 leading-relaxed">
-                  مرغوب‌ترین مواد را برمی‌گزینیم تا قطعه‌ای بسازیم که فراتر از
-                  فصل‌ها دوام بیاورد. ماندگاری، نخستین وعده‌ی ماست.
+هر لباس، حامل یک واژه، یک حس و یک روایت از دل فرهنگ اصیلمان است.
+ما برای زنده‌ماندنِ زبان مادری  ایستاده‌ایم؛ تا نسل‌های بعدی، هویت‌شان را نه از گذشته، که از دل زندگی امروز دوباره بشنوند.
+
                 </p>
               </motion.div>
               <motion.div
@@ -93,11 +92,12 @@ export function HeritageSection() {
                 className="max-w-xs mx-auto"
               >
                 <h3 className="font-serif text-xl lg:text-2xl text-background mb-3">
-                  پایداری مسئولانه
+                  نفسی تازه برای جنگل‌های هیرکانی
                 </h3>
                 <p className="text-sm text-background/70 leading-relaxed">
-                  به منابع و دستانی که می‌آفرینند احترام می‌گذاریم. تولیدی
-                  سنجیده، با کمترین اثر و بیشترین معنا.
+                  به ازای هر ۱۰ لباسی که به فروش می‌رسد، یک نهال در دل هیرکانی می‌نشانیم
+تو فقط خریدار نیستی؛ تو شریک ما در حفظ خانه‌ی سبزمانی، جایی که ریشه‌هایمان در خاکش تنیده و برگ‌هایمان در آن تنفس می‌کنند.
+
                 </p>
               </motion.div>
             </div>

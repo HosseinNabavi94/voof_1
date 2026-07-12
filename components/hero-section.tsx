@@ -17,7 +17,7 @@ export function HeroSection() {
           transition={{ duration: 1, delay: 0.5 }}
           className="text-background rotate-90 whitespace-nowrap"
         >
-          <span className="text-xs">پاییز / زمستان ۱۴۰۵</span>
+          <span className="text-xs">تابستان / پاییز ۱۴۰۵</span>
         </motion.div>
       </div>
 
@@ -26,7 +26,7 @@ export function HeroSection() {
         {/* Background image */}
         <div className="absolute inset-0">
           <Image
-            src="/luxury-minimalist-fashion-model-in-elegant-dark-cl.jpg"
+            src="/voof-new-hero.webp"
             alt="مدل مد شیک در لباس تیره"
             fill
             priority
@@ -45,13 +45,13 @@ export function HeroSection() {
             className="max-w-2xl"
           >
             <h1 className="font-serif text-4xl md:text-5xl lg:text-7xl text-background leading-[1.3] mb-6 text-balance">
-              هنرِ
+              ووف
               <br />
-              لوکسِ آرام
+              برای بازگشت شادی
             </h1>
             <p className="text-background/80 text-base lg:text-lg mb-10 max-w-md leading-relaxed">
-              قطعاتی بی‌زمان که با نیت آفریده شده‌اند؛ جایی که میراث با تجدد
-              امروزی پیوند می‌خورد.
+              هر تارِ ووف، عهدی‌ست با ریشه‌های کهنِ این سرزمین.
+تا هنر و صنعت، دوباره هویتِ وطن را بر قامتِ نسل امروز بپوشاند.
             </p>
             <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
               <Link href="/shop">
@@ -59,7 +59,7 @@ export function HeroSection() {
                   size="lg"
                   className="bg-background text-foreground hover:bg-background/90 px-10 py-6 text-sm group"
                 >
-                  کشف مجموعه
+                  همه محصولات
                   <ArrowLeft className="mr-3 h-4 w-4 transition-transform group-hover:-translate-x-1" />
                 </Button>
               </Link>

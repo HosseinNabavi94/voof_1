@@ -6,7 +6,7 @@ import { Instagram, Facebook, Twitter } from "lucide-react";
 
 export function PremiumFooter() {
   const articles = [
-    { label: "میراث ما", href: "/heritage" },
+    { label: "داستان ووف", href: "/heritage" },
     { label: "فرصت‌های شغلی", href: "/careers" },
     { label: "تماس با ما", href: "/contact" },
     { label: "ارسال و مرجوعی", href: "/shipping" },
@@ -70,7 +70,7 @@ export function PremiumFooter() {
         <div className="pt-8 border-t border-background/20 flex flex-col md:flex-row justify-between items-center gap-6">
           <div className="flex items-center gap-8">
             <Link href="/" className="font-serif text-lg">
-              مزون
+              ووف
             </Link>
             <div className="flex items-center gap-4">
               <a
@@ -98,7 +98,7 @@ export function PremiumFooter() {
           </div>
 
           <div className="text-xs text-background/50">
-            <span>© ۱۴۰۴ مزون. تمامی حقوق محفوظ است.</span>
+            <span>© ۱۴۰۴ . تمامی حقوق برای تیم ووف محفوظ است.</span>
           </div>
         </div>
       </div>

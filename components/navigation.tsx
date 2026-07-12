@@ -62,7 +62,7 @@ export function Navigation() {
   const navLinks = [
     { href: "/", label: "خانه" },
     { href: "/shop", label: "فروشگاه" },
-    { href: "/heritage", label: "میراث" },
+    { href: "/heritage", label: "داستان ووف" },
   ];
 
   const navItemColor = isScrolled ? "text-foreground" : "text-white";
@@ -116,9 +116,9 @@ export function Navigation() {
             {/* Logo */}
             <Link
               href="/"
-              className="absolute left-1/2 -translate-x-1/2 font-serif text-xl lg:text-2xl text-foreground"
+              className="absolute left-1/2 -translate-x-1/2 font-serif text-xl lg:text-2xl text-[#4e0000]"
             >
-              مزون
+              ووف
             </Link>
 
             {/* Right icons */}
@@ -252,7 +252,7 @@ export function Navigation() {
                     href="/account/orders"
                     className="block text-lg transition-colors text-foreground/60 hover:text-foreground"
                   >
-                    سفارش‌ها
+                    سفارش‌‌ها
                   </Link>
                 </div>
               </nav>
